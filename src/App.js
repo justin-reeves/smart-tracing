@@ -19,6 +19,7 @@ import PrivacyPolicyModal from './components/modal/PrivacyPolicy';
 import HomePage from './components/pages/Home';
 import NotFoundPage from './components/views/errors/NotFound';
 import AboutUsPage from './components/pages/AboutUs';
+import AdminLanding from './components/pages/AdminLanding';
 import IndividualsLandingPage from './components/pages/IndividualsLanding';
 import CommunityPage from './components/pages/Community';
 import BusinessLandingPage from './components/pages/BusinessLanding';
@@ -53,7 +54,7 @@ const App = () => {
         $('#modal-register-notifications').modal('show');
     });
 
-    // Forms (Need refactor) --------------------------------------------------//
+    // Forms (Need refactor) -------------------------------------------------//
 
     $('body').on('click', '#notify-submit', (e) => {
         e.preventDefault();
@@ -73,11 +74,15 @@ const App = () => {
             <div id="app">
                 <div className="page">
                     <Primary />
-                    <Secondary />
+
                     <Router>
+                        <Secondary />
                         <Switch>
                             <Route path="/about">
                                 <AboutUsPage />
+                            </Route>
+                            <Route path="/admin">
+                                <AdminLanding />
                             </Route>
                             <Route path="/individual">
                                 <IndividualsLandingPage />
